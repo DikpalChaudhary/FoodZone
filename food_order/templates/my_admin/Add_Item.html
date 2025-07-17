@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+     {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar adminnav fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success" href="#">FoodZone</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header adminnav">
+        <h5 class="offcanvas-title text-success " id="offcanvasNavbarLabel">FoodZone</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body adminnav">
+
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Order list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Add Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "menuITem" %}">Menu Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Report</a>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+         <form class="d-flex mt-3">
+        <button class="btn btn-light btn-sm me-2" type="button">Settings</button>
+        <a href="" class="btn adminbtn btn-sm">Logout</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container AddItemMArgin">
+    <div class="row">
+        <div class="col-md-6">
+       <form method="POST" enctype="multipart/form-data" class="bg-light p-4 mt-3 offset-4 shadow">
+        {% csrf_token %}
+  <div class="mb-3">
+    <label for="" class="form-label">Item Name</label>
+    <input type="text" class="form-control" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Details</label>
+    <Textarea type="text" class="form-control" name="details"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Price</label>
+    <input type="text" class="form-control" name="price">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Image</label>
+    <input type="File" class="form-control" name="image">
+  </div>
+  <div class="mb-3 offset-4">
+<button type="submit" class="btn cartBackground">Add Item</button>
+  </div>
+</form>
+  </div>
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>

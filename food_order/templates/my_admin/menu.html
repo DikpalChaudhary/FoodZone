@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+     {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar adminnav fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success" href="#">FoodZone</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header adminnav">
+        <h5 class="offcanvas-title text-success " id="offcanvasNavbarLabel">FoodZone</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body adminnav">
+
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Order list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "add_item" %}">Add Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menuITem">Menu Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Report</a>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+         <form class="d-flex mt-3">
+        <button class="btn btn-light btn-sm me-2" type="button">Settings</button>
+        <a href="" class="btn adminbtn btn-sm">Logout</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container menuCardTop">
+  <h3 class="text-center">List of Foods</h3>
+        <div class="card card-shadow bg-secondary">
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th>S.NO</th>
+                        <th>NAME</th>
+                        <th>IMAGE</th>
+                        <th>DETAILS</th>
+                        <th>PRICE</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for items in menuItem  %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{items.name}}</td>
+                        <td>
+                        <img src="{{ items.image.url }}" alt="Item Image" style="width: 80px; height: auto;">
+                        </td>
+                        <td>{{items.details}}</td>
+                        <td>{{items.price}}</td>
+                        <td>
+                        <button class="cartBackground"> Remove</button>
+                        <button class="btn btn-outline-success"> Update</button>
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
