@@ -9,6 +9,27 @@
 body{
     background-color: #F9F9F9;
 }
+.logo{
+  color: rgb(71, 166, 12);
+  background-color: #F9F9F9;
+  border-radius: 15px;
+
+}
+.loginnav{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  font-size: larger;
+
+}
+.navA{
+  text-decoration: none;
+}
+.navBorder{
+  border-radius: 30px;
+}
+
 
 .navBackground{
   background-color: #FF4C4C;
@@ -31,7 +52,6 @@ body{
 .nava:hover::after{
     width: 100%;
 }
-
 
 .imageHeight{
   height: 500px ;
@@ -95,23 +115,24 @@ color: #FFC107;
 .menuCardTop{
   margin-top: 70px;
 }
-.barChart1{
-  background-color: #E53935;
-  height: 600px;
+
+
+.logout{
+  text-decoration: none;
+  margin-left: 5px;
+
 }
-.barChart2{
-  background-color: #52e535;
-  height: 500px;
-}.barChart1{
-  background-color: #E53935;
-  height: 600px;
-}.barChart1{
-  background-color: #E53935;
-  height: 600px;
-}.barChart1{
-  background-color: #E53935;
-  height: 600px;
-}.barChart1{
-  background-color: #E53935;
-  height: 600px;
+
+
+
+.carousel-img {
+  height: 70vh;         /* Responsive height */
+  object-fit: cover;    /* Ensures the image fills the area without distortion */
 }
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 40vh;       /* Smaller height for phones/tablets */
+  }
+}
+
