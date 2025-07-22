@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(9l9ec8c&*!hznzjn*)wmmc3^h!+-x6+@9cssxd6v%p+z^v7^5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -49,7 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.whiteNoiseMiddleware'
 ]
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifeststaticFilesStorage'
 
 ROOT_URLCONF = 'food_order.urls'
 

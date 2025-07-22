@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+    color: #333333;
+
+}
+body{
+    background-color: #F9F9F9;
+}
+.logo{
+  color: rgb(71, 166, 12);
+  background-color: #F9F9F9;
+  border-radius: 15px;
+
+}
+.loginnav{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  font-size: larger;
+
+}
+.navA{
+  text-decoration: none;
+}
+.navBorder{
+  border-radius: 30px;
+}
+
+
+.navBackground{
+  background-color: #FF4C4C;
+}
+.nava{
+    position: relative;
+    color: white;
+
+}
+.nava::after{
+    content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: wheat;
+      transition: width 0.6s ease;
+}
+.nava:hover::after{
+    width: 100%;
+}
+
+.imageHeight{
+  height: 500px ;
+}
+
+.border_redius{
+  border-radius: 30px;
+}
+.cartBackground{
+  background-color:#E53935;
+  color:#F9F9F9 ;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.cartBackground:hover{
+  background-color: #F9F9F9;
+  color: #333333;
+  border: 1px solid#E53935;
+}
+
+.priceTag{
+color: #FFC107;
+}
+.border{
+  border: 10px solid wheat;
+}
+.fontweight{
+  font-weight: bolder;
+}
+.backgroundColor{
+  background-color: #F9F9F9;
+  color: #333333;
+}
+.footerBackground{
+  background-color:#E53935;
+  color:#F9F9F9 ;
+}
+.text{
+  text-decoration: none;
+  color: #F9F9F9;
+}
+
+
+
+/* Admin  Csss */
+.adminnav{
+  background-color:#FF4C4C;
+}
+.adminbtn{
+  background-color: rgb(71, 166, 12);
+  color:#F9F9F9 ;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+
+}
+.AddItemMArgin{
+  margin-top: 70px;
+}
+.menuCardTop{
+  margin-top: 70px;
+}
+
+
+.logout{
+  text-decoration: none;
+  margin-left: 5px;
+
+}
+
+
+
+.carousel-img {
+  height: 70vh;         /* Responsive height */
+  object-fit: cover;    /* Ensures the image fills the area without distortion */
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 40vh;       /* Smaller height for phones/tablets */
+  }
+}
+
