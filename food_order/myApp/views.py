@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.contrib import messages 
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -75,7 +76,10 @@ def remove_from_cart(request, item_id):
     cart_item.delete()
     return redirect('view_cart')
 
+@login_required(login_url='/')
 def view_cart(request):
+    if not request.user.is_authenticated:
+        return redirect('login')     
     cart = Cart.objects.get(user=request.user)
     cart_items = cart.items.all()
     total_sum = cart.total_price()
